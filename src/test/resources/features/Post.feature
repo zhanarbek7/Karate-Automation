@@ -6,7 +6,7 @@ Feature: Post API Demo
     # in case if we write xml, server gonna provide xml
     # if it can do so
     * header Accept = 'application/json'
-    * def expectedOutput = read("response1.json")
+    * def expectedOutput = read("classpath:jsons/response1.json")
 
   Scenario: Post Example 1, using Background
     Given path '/users'
@@ -34,7 +34,7 @@ Feature: Post API Demo
 
   Scenario: Post Example 4, read request body data from file
     Given path '/users'
-    And def requestBody = read("request1.json")
+    And def requestBody = read("classpath:jsons/request1.json")
     And request requestBody
     When method POST
     Then status 201
@@ -42,3 +42,13 @@ Feature: Post API Demo
     And match $ == expectedOutput
     And print response
 
+  Scenario: Post Example 5, read body data from file and change request values
+    Given path '/users'
+    And def requestBody = read("classpath:jsons/request1.json")
+    And set requestBody.job = 'Engineer'
+    And request requestBody
+    When method POST
+    Then status 201
+    And match response == expectedOutput
+    And match $ == expectedOutput
+    And print response
