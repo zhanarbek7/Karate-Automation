@@ -30,14 +30,6 @@ Feature: Get API Demo
     Then status 200
     And print response
 
-    # Get with Path and Params
-  Scenario: Get Demo 3
-    Given path '/users'
-    And param page = 2
-    When method GET
-    Then status 200
-    And print response
-
     # Get with Assertions
   Scenario: Get Demo 4
     Given path '/users'
