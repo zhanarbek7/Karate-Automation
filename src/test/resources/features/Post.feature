@@ -38,5 +38,7 @@ Feature: Post API Demo
     And request requestBody
     When method POST
     Then status 201
+    And match response == expectedOutput
+    And match $ == expectedOutput
     And print response
 
