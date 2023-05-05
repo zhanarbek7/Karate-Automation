@@ -30,4 +30,13 @@ Feature: Post API Demo
     And request {"name":"Zhanarbek","job":"Leader"}
     When method POST
     Then status 201
-    And match response == expectedOutput
+    And match $ == expectedOutput
+
+  Scenario: Post Example 4, read request body data from file
+    Given path '/users'
+    And def requestBody = read("request1.json")
+    And request requestBody
+    When method POST
+    Then status 201
+    And print response
+

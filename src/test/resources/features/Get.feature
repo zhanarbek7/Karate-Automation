@@ -33,7 +33,7 @@ Feature: Get API Demo
     # Get with Assertions
     # assert vs match
     # assert is used for simple comparisons and can't not be with $.
-    # match is used with more complex comparisons can't be used with response.
+    # match is used with more complex comparisons
   Scenario: Get Demo 4
     Given path '/users'
     And param page = 2
