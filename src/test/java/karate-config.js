@@ -7,14 +7,15 @@ function fn(){
     var env = karate.env;
     karate.log('The value of env is: ', env)
 
-    if(env == 'qa'){
+    if(env === 'qa'){
         config.baseURL = "https://reqres.in/qa"
     }
-    else if(env == 'dev'){
+    else if(env === 'dev'){
         config.baseURL = "https://reqres.in/dev"
     }
     else{
-        config.baseURL = "https://reqres.in/default"
+        console.log("Hi, brothers what do you do?")
+        config.baseURL = "https://reqres.in/"
     }
 
     karate.configure('connectTimeout',500);

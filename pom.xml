@@ -23,14 +23,12 @@
 
         <dependency>
             <groupId>com.intuit.karate</groupId>
-            <artifactId>karate-junit4</artifactId>
-            <version>1.1.0</version>
-            <scope>test</scope>
+            <artifactId>karate-core</artifactId>
+            <version>1.3.1</version>
         </dependency>
-
         <dependency>
             <groupId>com.intuit.karate</groupId>
-            <artifactId>karate-core</artifactId>
+            <artifactId>karate-junit5</artifactId>
             <version>1.3.1</version>
         </dependency>
     </dependencies>
